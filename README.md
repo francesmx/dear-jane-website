@@ -27,6 +27,40 @@ npm run preview
 
 Static output lands in `dist/`.
 
+## Host on Cloudflare Pages (free)
+
+The site is a static Vite build and fits the free Cloudflare Pages tier.
+
+### 1. Create a free Cloudflare account
+
+1. Sign up at [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up)
+2. Verify your email
+
+### 2. Connect this GitHub repo
+
+1. In the Cloudflare dashboard: **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. Authorise Cloudflare for GitHub and select `francesmx/dear-jane-website`
+3. Use these build settings:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Vite (or None) |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Root directory | `/` (default) |
+| Node version | `22` (or set env `NODE_VERSION=22`) |
+
+4. Save and deploy — you’ll get a `*.pages.dev` URL immediately
+
+### 3. (Optional) Buy a domain on Cloudflare Registrar
+
+1. **Domain registration** → search for something like `dearjane.app` / `getdearjane.com`
+2. Register it (Cloudflare sells at-cost; hosting stays free)
+3. In the Pages project → **Custom domains** → add the domain  
+   Cloudflare will create the DNS records for you if the domain is on Cloudflare
+
+After the custom domain is live, use that URL for App Store / Play Console privacy policy links (and redirect the old compliance page if needed).
+
 ## Privacy Policy
 
 The full Privacy Policy lives at [`public/privacy-policy.html`](./public/privacy-policy.html) (served as `/privacy-policy.html`). It was moved here from [`dear-jane-compliance`](https://github.com/francesmx/dear-jane-compliance).
