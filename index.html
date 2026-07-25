@@ -42,7 +42,10 @@
         <a href="#scandals">Scandals</a>
         <a href="#quizzes">Quizzes</a>
         <a href="#standing">Standing</a>
-        <a class="nav-cta" href="#get-the-app">Get the app</a>
+        <a data-buy-me-a-coffee href="https://buymeacoffee.com/dearjane"
+          >Buy me a coffee</a
+        >
+        <a class="nav-cta" data-get-app href="#get-the-app">Get the app</a>
       </nav>
     </header>
 
@@ -63,7 +66,9 @@
           </h1>
           <p class="hero__support">Fifty scandals. Fifty quizzes.</p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#get-the-app">Begin</a>
+            <a class="button button--primary" data-get-app href="#get-the-app"
+              >Get the app</a
+            >
             <a class="button button--ghost" href="#scandals"
               >See what’s inside</a
             >
@@ -169,7 +174,7 @@
         </div>
 
         <div class="standing__phones reveal" data-reveal-delay="100">
-          <div class="phone phone--offset">
+          <div class="phone">
             <img
               src="/images/screen-profile.png"
               alt="Profile showing aficionado level New arrival in Meryton."
@@ -202,20 +207,39 @@
             Dear Jane is a Janeite’s companion: Regency scandals, Austen
             quizzes, and distinctions for those who read thoroughly.
           </p>
-          <div class="closing__actions">
-            <span class="button button--primary button--pending">
-              Coming to the App Store
-            </span>
+          <div
+            class="store-badges"
+            role="group"
+            aria-label="Download Dear Jane"
+          >
             <a
-              class="button button--ghost"
-              href="https://buymeacoffee.com/dearjane"
-              target="_blank"
-              rel="noopener noreferrer"
+              class="store-badge"
+              data-app-store
+              href="#"
+              aria-label="Download on the App Store"
             >
-              Buy me a coffee
+              <img
+                src="/images/badge-app-store.svg"
+                alt="Download on the App Store"
+                width="120"
+                height="40"
+              />
+            </a>
+            <a
+              class="store-badge store-badge--google"
+              data-play-store
+              href="#"
+              aria-label="Get it on Google Play"
+            >
+              <img
+                src="/images/badge-google-play.png"
+                alt="Get it on Google Play"
+                width="135"
+                height="52"
+              />
             </a>
           </div>
-          <p class="closing__note">iOS first. Android in due course.</p>
+          <p class="closing__note">Available on iOS and Android.</p>
         </div>
       </section>
     </main>
@@ -227,12 +251,11 @@
       </div>
       <p>
         Made with affection for Janeites everywhere ·
-        <a
-          href="https://buymeacoffee.com/dearjane"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Support</a
+        <a data-buy-me-a-coffee href="https://buymeacoffee.com/dearjane"
+          >Buy me a coffee</a
         >
+        ·
+        <a href="./privacy-policy.html">Privacy Policy</a>
       </p>
     </footer>
 

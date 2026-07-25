@@ -1,3 +1,38 @@
+import {
+  APP_STORE_URL,
+  BUY_ME_A_COFFEE_URL,
+  GET_THE_APP_URL,
+  PLAY_STORE_URL,
+} from "./config";
+
+function wireAnchors(
+  selector: string,
+  url: string,
+  options: { external?: boolean } = {},
+) {
+  const links = document.querySelectorAll<HTMLAnchorElement>(selector);
+  for (const link of links) {
+    if (!url) {
+      link.setAttribute("aria-disabled", "true");
+      link.removeAttribute("href");
+      link.tabIndex = -1;
+      continue;
+    }
+
+    link.href = url;
+    link.removeAttribute("aria-disabled");
+    if (options.external && url.startsWith("http")) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    }
+  }
+}
+
+wireAnchors("[data-get-app]", GET_THE_APP_URL);
+wireAnchors("[data-app-store]", APP_STORE_URL, { external: true });
+wireAnchors("[data-play-store]", PLAY_STORE_URL, { external: true });
+wireAnchors("[data-buy-me-a-coffee]", BUY_ME_A_COFFEE_URL, { external: true });
+
 const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
 
 const observer = new IntersectionObserver(
@@ -22,7 +57,6 @@ for (const el of revealElements) {
   observer.observe(el);
 }
 
-// Soften sticky header once the user leaves the hero.
 const header = document.querySelector<HTMLElement>(".site-header");
 const hero = document.querySelector<HTMLElement>(".hero");
 
