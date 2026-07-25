@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dear Jane — fifty Regency scandals and fifty Austen quizzes for those who know the novels by heart."
+    />
+    <meta property="og:title" content="Dear Jane" />
+    <meta
+      property="og:description"
+      content="For those who know Austen by heart. Fifty scandals. Fifty quizzes."
+    />
+    <meta property="og:image" content="/images/app-icon.png" />
+    <meta name="theme-color" content="#FAFAF8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Dear Jane — Austen, by heart</title>
+  </head>
+  <body>
+    <div class="paper-atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand-mark" href="#top" aria-label="Dear Jane home">
+        <img
+          src="/images/silhouette.png"
+          alt=""
+          width="36"
+          height="36"
+          class="brand-mark__icon"
+        />
+        <span>Dear Jane</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#scandals">Scandals</a>
+        <a href="#quizzes">Quizzes</a>
+        <a href="#standing">Standing</a>
+        <a class="nav-cta" href="#get-the-app">Get the app</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-brand">
+        <div class="hero__copy reveal">
+          <img
+            src="/images/silhouette.png"
+            alt=""
+            width="72"
+            height="72"
+            class="hero__silhouette"
+          />
+          <p class="hero__brand" id="hero-brand">Dear Jane</p>
+          <h1 class="hero__headline">
+            For those who know Austen
+            <em>by heart.</em>
+          </h1>
+          <p class="hero__support">Fifty scandals. Fifty quizzes.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#get-the-app">Begin</a>
+            <a class="button button--ghost" href="#scandals"
+              >See what’s inside</a
+            >
+          </div>
+        </div>
+
+        <div class="hero__stage reveal" data-reveal-delay="120">
+          <div class="phone phone--hero float-soft">
+            <img
+              src="/images/screen-welcome.png"
+              alt="Dear Jane welcome screen: For those who know Austen by heart."
+              width="390"
+              height="844"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="feature feature--scandals"
+        id="scandals"
+        aria-labelledby="scandals-title"
+      >
+        <div class="feature__media reveal">
+          <div class="phone">
+            <img
+              src="/images/screen-scandals.png"
+              alt="Regency Scandals feed with AITA-style confessions."
+              width="390"
+              height="844"
+            />
+          </div>
+        </div>
+        <div class="feature__copy reveal" data-reveal-delay="80">
+          <p class="eyebrow">Regency Scandals</p>
+          <h2 id="scandals-title">Same format. Different century.</h2>
+          <p class="lede">
+            Told as
+            <strong class="accent">AITA</strong>
+            posts — social misdemeanours from Austen’s world, confessed for your
+            judgement.
+          </p>
+          <p class="body">
+            Read the confession. Pass judgement. Then name the culprit. Pride,
+            romance, family, money, meddling — every drawing-room disaster,
+            ready for the assembly.
+          </p>
+          <p class="pull">Judge first. Guess second.</p>
+        </div>
+      </section>
+
+      <section
+        class="feature feature--quizzes"
+        id="quizzes"
+        aria-labelledby="quizzes-title"
+      >
+        <div class="feature__copy reveal">
+          <p class="eyebrow">Quizzes</p>
+          <h2 id="quizzes-title">Three ways to play.</h2>
+          <ul class="quiz-ways">
+            <li>
+              <span class="tag tag--personality">Personality</span>
+              <p>
+                Discover who you’d be in Austen’s world, and who might find you
+                intolerable.
+              </p>
+            </li>
+            <li>
+              <span class="tag tag--knowledge">Knowledge</span>
+              <p>Test how well you know the novels. Scored out of 10.</p>
+            </li>
+            <li>
+              <span class="tag tag--opinion">Opinion</span>
+              <p>
+                Weigh in on the debates Austen fans never settle: best novel,
+                finest hero, Mr Collins or no.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="feature__media reveal" data-reveal-delay="80">
+          <div class="phone">
+            <img
+              src="/images/screen-quizzes.png"
+              alt="Quizzes screen with personality, knowledge, and opinion categories."
+              width="390"
+              height="844"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="standing" id="standing" aria-labelledby="standing-title">
+        <div class="standing__intro reveal">
+          <p class="eyebrow">Your standing</p>
+          <h2 id="standing-title">Rise through the neighbourhood.</h2>
+          <p class="lede">
+            From a new arrival in Meryton to Austen aficionado — track scandals
+            completed, quizzes finished, and
+            <em>Society Honours</em> earned for judgement, wit, and thorough
+            reading.
+          </p>
+        </div>
+
+        <div class="standing__phones reveal" data-reveal-delay="100">
+          <div class="phone phone--offset">
+            <img
+              src="/images/screen-profile.png"
+              alt="Profile showing aficionado level New arrival in Meryton."
+              width="390"
+              height="844"
+            />
+          </div>
+          <div class="phone">
+            <img
+              src="/images/screen-honours.png"
+              alt="Society Honours grid of distinctions to earn."
+              width="390"
+              height="844"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="closing" id="get-the-app" aria-labelledby="closing-title">
+        <div class="closing__inner reveal">
+          <img
+            src="/images/app-icon.png"
+            alt=""
+            width="88"
+            height="88"
+            class="closing__icon"
+          />
+          <h2 id="closing-title">The assembly awaits.</h2>
+          <p class="lede">
+            Dear Jane is a Janeite’s companion: Regency scandals, Austen
+            quizzes, and distinctions for those who read thoroughly.
+          </p>
+          <div class="closing__actions">
+            <span class="button button--primary button--pending">
+              Coming to the App Store
+            </span>
+            <a
+              class="button button--ghost"
+              href="https://buymeacoffee.com/dearjane"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Buy me a coffee
+            </a>
+          </div>
+          <p class="closing__note">iOS first. Android in due course.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__brand">
+        <img src="/images/silhouette.png" alt="" width="28" height="28" />
+        <span>Dear Jane</span>
+      </div>
+      <p>
+        Made with affection for Janeites everywhere ·
+        <a
+          href="https://buymeacoffee.com/dearjane"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Support</a
+        >
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
