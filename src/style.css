@@ -493,15 +493,27 @@ a:hover {
   margin: 1.65rem auto 0;
 }
 
+/* Fixed box + background-size so SVG/PNG badges match exactly. */
 .store-badge {
   display: block;
-  width: 11.5rem;
-  height: 3.4rem;
-  line-height: 0;
+  flex: 0 0 auto;
+  width: 200px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   text-decoration: none;
   transition:
     opacity 180ms ease,
     transform 180ms ease;
+}
+
+.store-badge--apple {
+  background-image: url("/images/badge-app-store.svg");
+}
+
+.store-badge--google {
+  background-image: url("/images/badge-google-play.png");
 }
 
 .store-badge:hover {
@@ -514,13 +526,6 @@ a:hover {
   pointer-events: none;
   opacity: 0.72;
   transform: none;
-}
-
-.store-badge img {
-  display: block;
-  width: 11.5rem;
-  height: 3.4rem;
-  object-fit: fill;
 }
 
 .closing__note {
@@ -665,10 +670,9 @@ a:hover {
     gap: 0.9rem;
   }
 
-  .store-badge,
-  .store-badge img {
-    width: 12.5rem;
-    height: 3.7rem;
+  .store-badge {
+    width: 220px;
+    height: 66px;
   }
 
   .closing__inner {
