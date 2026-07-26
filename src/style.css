@@ -750,16 +750,29 @@ a:hover {
 }
 
 @media (min-width: 960px) {
-  .hero {
-    grid-template-columns: minmax(18rem, 30rem) auto;
+  .hero,
+  .feature {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
     justify-content: center;
-    column-gap: clamp(2.5rem, 5vw, 4.5rem);
-    gap: 3rem;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+    max-width: none;
+    width: 100%;
   }
 
-  .hero__copy {
-    text-align: left;
+  .hero {
+    min-height: calc(100svh - 4.2rem);
+  }
+
+  .hero__copy,
+  .feature__copy {
+    flex: 0 1 28rem;
+    width: min(28rem, 40vw);
+    max-width: 28rem;
     margin-inline: 0;
+    text-align: left;
   }
 
   .hero__silhouette {
@@ -770,36 +783,14 @@ a:hover {
     justify-content: flex-start;
   }
 
-  .hero__stage {
+  .hero__stage,
+  .feature__media {
+    flex: 0 0 auto;
+    display: flex;
     justify-content: center;
-  }
-
-  /* Keep copy + phone as one centred pair instead of stretching edge-to-edge. */
-  .feature {
-    grid-template-columns: auto minmax(18rem, 30rem);
-    justify-content: center;
-    column-gap: clamp(2.5rem, 5vw, 4.5rem);
-    gap: clamp(2rem, 5vw, 3.5rem);
-  }
-
-  .feature--quizzes {
-    grid-template-columns: minmax(18rem, 30rem) auto;
   }
 
   .feature--scandals .feature__copy {
     order: 0;
-  }
-
-  .feature__media {
-    justify-content: center;
-  }
-
-  .feature--quizzes .feature__media {
-    justify-content: center;
-  }
-
-  .feature__copy {
-    max-width: 30rem;
-    margin-inline: 0;
   }
 }
