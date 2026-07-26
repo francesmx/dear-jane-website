@@ -564,7 +564,13 @@ a:hover {
   object-fit: contain;
 }
 
+/* Visible by default so a stale/failed JS cache cannot blank the page. */
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js-ready .reveal:not(.is-visible) {
   opacity: 0;
   transform: translateY(14px);
   transition:
@@ -572,7 +578,7 @@ a:hover {
     transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal.is-visible {
+html.js-ready .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -596,6 +602,8 @@ a:hover {
     scroll-behavior: auto;
   }
 
+  html.js-ready .reveal:not(.is-visible),
+  html.js-ready .reveal.is-visible,
   .reveal {
     opacity: 1;
     transform: none;
