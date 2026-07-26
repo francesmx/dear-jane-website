@@ -35,6 +35,13 @@ wireAnchors("[data-buy-me-a-coffee]", BUY_ME_A_COFFEE_URL, { external: true });
 
 const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
 
+const showReveal = (el: HTMLElement) => {
+  el.classList.add("is-visible");
+};
+
+// Enable hide-until-scroll only after JS is confirmed running.
+document.documentElement.classList.add("js-ready");
+
 const observer = new IntersectionObserver(
   (entries) => {
     for (const entry of entries) {
@@ -42,20 +49,27 @@ const observer = new IntersectionObserver(
       const el = entry.target as HTMLElement;
       const delay = Number(el.dataset.revealDelay ?? 0);
       window.setTimeout(() => {
-        el.classList.add("is-visible");
+        showReveal(el);
       }, delay);
       observer.unobserve(el);
     }
   },
   {
-    threshold: 0.18,
-    rootMargin: "0px 0px -8% 0px",
+    threshold: 0.12,
+    rootMargin: "0px 0px -4% 0px",
   },
 );
 
 for (const el of revealElements) {
   observer.observe(el);
 }
+
+// Safety net for odd mobile browser/cache states.
+window.setTimeout(() => {
+  for (const el of revealElements) {
+    showReveal(el);
+  }
+}, 1500);
 
 const header = document.querySelector<HTMLElement>(".site-header");
 const hero = document.querySelector<HTMLElement>(".hero");
