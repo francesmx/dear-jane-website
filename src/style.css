@@ -567,6 +567,17 @@ a:hover {
   object-fit: contain;
 }
 
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.55rem;
+}
+
 /* Visible by default so a stale/failed JS cache cannot blank the page. */
 .reveal {
   opacity: 1;
