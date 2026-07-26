@@ -329,7 +329,7 @@ a:hover {
 }
 
 .eyebrow {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.35rem;
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 600;
@@ -387,22 +387,27 @@ a:hover {
 
 .quiz-ways {
   list-style: none;
-  margin: 1.35rem 0 0;
+  margin: 0.9rem 0 0;
   padding: 0;
   display: grid;
-  gap: 1rem;
+  gap: 0;
   text-align: left;
 }
 
 .quiz-ways li {
-  padding-top: 1rem;
+  padding: 0.7rem 0;
   border-top: 1px solid rgba(142, 141, 135, 0.35);
 }
 
+.quiz-ways li:last-child {
+  padding-bottom: 0;
+}
+
 .quiz-ways p {
-  margin: 0.45rem 0 0;
+  margin: 0.3rem 0 0;
   color: var(--ink-muted);
   font-size: 1rem;
+  line-height: 1.45;
 }
 
 .tag {
@@ -650,8 +655,8 @@ html.js-ready .reveal.is-visible {
 
   .feature,
   .standing {
-    gap: 2rem;
-    padding: 3.5rem var(--gutter);
+    gap: 1.5rem;
+    padding: 2.75rem var(--gutter);
   }
 
   .feature__copy {
@@ -744,7 +749,7 @@ html.js-ready .reveal.is-visible {
 
   .feature,
   .standing {
-    padding: clamp(4rem, 10vw, 7rem) var(--gutter);
+    padding: clamp(2.75rem, 6vw, 4.5rem) var(--gutter);
   }
 
   .standing__phones {
@@ -764,7 +769,7 @@ html.js-ready .reveal.is-visible {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: clamp(2.5rem, 5vw, 4.5rem);
+    gap: clamp(1.75rem, 3.5vw, 3rem);
     max-width: none;
     width: 100%;
   }
