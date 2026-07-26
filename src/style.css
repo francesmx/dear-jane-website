@@ -493,27 +493,25 @@ a:hover {
   margin: 1.65rem auto 0;
 }
 
-/* Fixed box + background-size so SVG/PNG badges match exactly. */
+/* Fixed box so App Store + Play badges match; real <img> still shows if CSS fails. */
 .store-badge {
   display: block;
   flex: 0 0 auto;
   width: 200px;
   height: 60px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  overflow: hidden;
+  line-height: 0;
   text-decoration: none;
   transition:
     opacity 180ms ease,
     transform 180ms ease;
 }
 
-.store-badge--apple {
-  background-image: url("/images/badge-app-store.svg");
-}
-
-.store-badge--google {
-  background-image: url("/images/badge-google-play.png");
+.store-badge img {
+  display: block;
+  width: 200px;
+  height: 60px;
+  object-fit: fill;
 }
 
 .store-badge:hover {
@@ -678,7 +676,8 @@ html.js-ready .reveal.is-visible {
     gap: 0.9rem;
   }
 
-  .store-badge {
+  .store-badge,
+  .store-badge img {
     width: 220px;
     height: 66px;
   }
