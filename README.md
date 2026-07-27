@@ -63,7 +63,7 @@ After the custom domain is live, use that URL for App Store / Play Console priva
 
 ## Privacy Policy
 
-The full Privacy Policy lives at [`public/privacy-policy.html`](./public/privacy-policy.html) (served as `/privacy-policy.html`). It was moved here from [`dear-jane-compliance`](https://github.com/francesmx/dear-jane-compliance).
+The full Privacy Policy lives at [`public/privacy-policy.html`](./public/privacy-policy.html) (served as `/privacy-policy.html`, and typically also at `/privacy-policy`). It is written to match what Dear Jane actually collects (on-device progress, PostHog analytics, Sentry diagnostics/session replay, optional feedback).
 
 ## Get the app / store links
 
