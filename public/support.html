@@ -127,13 +127,25 @@
         flex-shrink: 0;
       }
 
+      /* Match .nav-cta / .nav-cta--mobile height so the bar matches the main site. */
       .site-header__label {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.4rem 0.85rem;
         font-family: var(--font-display);
-        font-size: 0.78rem;
+        font-size: 0.82rem;
         font-weight: 600;
         letter-spacing: 0.14em;
+        line-height: 1.2;
         text-transform: uppercase;
         color: var(--ink-muted);
+      }
+
+      @media (min-width: 760px) {
+        .site-header__label {
+          padding: 0.45rem 0.95rem;
+          font-size: 0.88rem;
+        }
       }
 
       .policy {
