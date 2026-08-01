@@ -1,4 +1,4 @@
-# Dear Jane — marketing website
+# Dear Jane - marketing website
 
 Marketing site for **Dear Jane**, a Jane Austen companion app: Regency scandals, Austen quizzes, and Society Honours.
 
@@ -50,7 +50,7 @@ The site is a static Vite build and fits the free Cloudflare Pages tier.
 | Root directory | `/` (default) |
 | Node version | `22` (or set env `NODE_VERSION=22`) |
 
-4. Save and deploy — you’ll get a `*.pages.dev` URL immediately
+4. Save and deploy - you’ll get a `*.pages.dev` URL immediately
 
 ### 3. (Optional) Buy a domain on Cloudflare Registrar
 
@@ -64,6 +64,10 @@ After the custom domain is live, use that URL for App Store / Play Console priva
 ## Privacy Policy
 
 The full Privacy Policy lives at [`public/privacy-policy.html`](./public/privacy-policy.html) (served as `/privacy-policy.html`, and typically also at `/privacy-policy`). It is written to match what Dear Jane actually collects (on-device progress, PostHog analytics, Sentry diagnostics/session replay, optional feedback).
+
+## Support URL (App Store / Play)
+
+The App Store support page lives at [`public/support.html`](./public/support.html) (served as `/support.html`). Use `https://dearjaneapp.co.uk/support.html` (or your custom domain equivalent) as the Support URL in store listings. Contact email is assembled in JavaScript so it is not a plain `mailto:` in the HTML source.
 
 ## Get the app / store links
 
