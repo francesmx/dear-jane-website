@@ -120,6 +120,7 @@ export function captureWebsiteEvent(
 export function wireCtaTracking() {
   const bindings: Array<{ selector: string; cta: string }> = [
     { selector: "[data-get-app]", cta: "get_the_app" },
+    { selector: "[data-see-whats-inside]", cta: "see_whats_inside" },
     { selector: "[data-app-store]", cta: "app_store" },
     { selector: "[data-play-store]", cta: "play_store" },
     { selector: "[data-buy-me-a-coffee]", cta: "buy_me_a_coffee" },
