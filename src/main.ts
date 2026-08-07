@@ -1,9 +1,12 @@
+import { initAnalytics, wireCtaTracking } from "./analytics";
 import {
   APP_STORE_URL,
   BUY_ME_A_COFFEE_URL,
   GET_THE_APP_URL,
   PLAY_STORE_URL,
 } from "./config";
+
+initAnalytics();
 
 function wireAnchors(
   selector: string,
@@ -32,6 +35,7 @@ wireAnchors("[data-get-app]", GET_THE_APP_URL);
 wireAnchors("[data-app-store]", APP_STORE_URL, { external: true });
 wireAnchors("[data-play-store]", PLAY_STORE_URL, { external: true });
 wireAnchors("[data-buy-me-a-coffee]", BUY_ME_A_COFFEE_URL, { external: true });
+wireCtaTracking();
 
 const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
 

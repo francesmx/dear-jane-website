@@ -15,6 +15,8 @@ Drawn from the app’s “morning letter” theme:
 
 ```bash
 npm install
+cp .env.example .env
+# Set VITE_POSTHOG_PROJECT_TOKEN in .env (same token as the Dear Jane app is fine)
 npm run dev
 ```
 
@@ -25,7 +27,22 @@ npm run build
 npm run preview
 ```
 
-Static output lands in `dist/`.
+Static output lands in `dist/` (landing page, support, and privacy policy).
+
+## Analytics (PostHog)
+
+The site uses PostHog (EU) with a cookie consent banner:
+
+- Events are tagged `surface=website` so they stay filterable from app analytics in the same project.
+- Until the visitor accepts or declines, no cookies are set and no events are sent (`cookieless_mode: on_reject`).
+- Accept enables first-party analytics cookies; decline keeps cookieless aggregate measurement.
+
+Set these environment variables locally and in Cloudflare Pages:
+
+| Variable | Required | Notes |
+| --- | --- | --- |
+| `VITE_POSTHOG_PROJECT_TOKEN` | Yes | Project API key from PostHog |
+| `VITE_POSTHOG_HOST` | No | Defaults to `https://eu.i.posthog.com` |
 
 ## Host on Cloudflare Pages (free)
 
@@ -50,7 +67,8 @@ The site is a static Vite build and fits the free Cloudflare Pages tier.
 | Root directory | `/` (default) |
 | Node version | `22` (or set env `NODE_VERSION=22`) |
 
-4. Save and deploy - you’ll get a `*.pages.dev` URL immediately
+4. Under **Environment variables**, add `VITE_POSTHOG_PROJECT_TOKEN` (and optionally `VITE_POSTHOG_HOST`) for Production
+5. Save and deploy - you’ll get a `*.pages.dev` URL immediately
 
 ### 3. (Optional) Buy a domain on Cloudflare Registrar
 
@@ -63,11 +81,11 @@ After the custom domain is live, use that URL for App Store / Play Console priva
 
 ## Privacy Policy
 
-The full Privacy Policy lives at [`public/privacy-policy.html`](./public/privacy-policy.html) (served as `/privacy-policy.html`, and typically also at `/privacy-policy`). It is written to match what Dear Jane actually collects (on-device progress, PostHog analytics, Sentry diagnostics/session replay, optional feedback).
+The full Privacy Policy lives at [`privacy-policy.html`](./privacy-policy.html) (served as `/privacy-policy.html`). It covers the app and website (on-device progress, PostHog analytics and website cookies, Sentry diagnostics/session replay, optional feedback).
 
 ## Support URL (App Store / Play)
 
-The App Store support page lives at [`public/support.html`](./public/support.html) (served as `/support.html`). Use `https://dearjaneapp.co.uk/support.html` (or your custom domain equivalent) as the Support URL in store listings. Contact email is assembled in JavaScript so it is not a plain `mailto:` in the HTML source.
+The App Store support page lives at [`support.html`](./support.html) (served as `/support.html`). Use `https://dearjaneapp.co.uk/support.html` (or your custom domain equivalent) as the Support URL in store listings. Contact email is assembled in JavaScript so it is not a plain `mailto:` in the HTML source.
 
 ## Get the app / store links
 

@@ -353,9 +353,10 @@
         <p>
           <strong>In short:</strong> Dear Jane has no accounts and no sign-up.
           Your game progress stays on your device. We use PostHog for product
-          analytics and Sentry for crash reporting, diagnostics, and limited
-          session replay. If you send optional feedback, that note (and any name
-          or email you include) goes to Sentry. Optional tips use Apple In-App
+          analytics (in the app and, with your cookie choice, on this website)
+          and Sentry for crash reporting, diagnostics, and limited session
+          replay. If you send optional feedback, that note (and any name or
+          email you include) goes to Sentry. Optional tips use Apple In-App
           Purchase on iOS and Google Play Billing on Android. Tips are never
           required to use Dear Jane.
         </p>
@@ -370,6 +371,7 @@
       <h2 id="contents">Contents</h2>
       <ol class="toc">
         <li><a href="#what-we-collect">What information do we collect?</a></li>
+        <li><a href="#website-analytics">Website analytics and cookies</a></li>
         <li><a href="#how-we-use">How do we use your information?</a></li>
         <li><a href="#legal-bases">Legal bases (EEA / UK)</a></li>
         <li>
@@ -418,7 +420,7 @@
         not need to provide a name or email to use Dear Jane.
       </p>
 
-      <h3>Product analytics (PostHog)</h3>
+      <h3>Product analytics (PostHog) - app</h3>
       <p>
         In preview and production builds, Dear Jane uses
         <a href="https://posthog.com/privacy">PostHog</a>
@@ -451,6 +453,42 @@
       <p>
         We do not ask for your real name, and we do not use advertising
         identifiers for tracking across other companies&rsquo; apps or websites.
+      </p>
+
+      <h2 id="website-analytics">1a. Website analytics and cookies</h2>
+      <p>
+        The Dear Jane marketing website
+        (<a href="https://dearjaneapp.co.uk">dearjaneapp.co.uk</a>) also uses
+        PostHog (EU cloud) to understand visits and which download or support
+        links people use.
+      </p>
+      <p>
+        When you first visit, we ask for your choice via a cookie banner. Until
+        you choose:
+      </p>
+      <ul>
+        <li>We do not store PostHog cookies or local storage for analytics</li>
+        <li>We do not send analytics events until you accept or decline</li>
+      </ul>
+      <p>
+        <strong>If you accept:</strong> PostHog may store first-party cookies /
+        local storage so we can recognise the same browser across visits, and
+        may receive page views, link clicks (including autocaptured
+        interactions), technical details about your browser, and approximate
+        location derived from IP address. We tag website events with
+        <code>surface=website</code> so they can be viewed separately from app
+        analytics in the same PostHog project.
+      </p>
+      <p>
+        <strong>If you decline:</strong> we still measure aggregate visits using
+        PostHog&rsquo;s cookieless mode (a privacy-preserving server-side hash).
+        No analytics cookies are stored on your device for that purpose.
+      </p>
+      <p>
+        You can change your mind later by clearing site data for
+        dearjaneapp.co.uk (which clears the stored consent choice) and reloading
+        the page, or by contacting us at
+        <a href="mailto:info@dearjaneapp.co.uk">info@dearjaneapp.co.uk</a>.
       </p>
 
       <h3>Crash reporting, diagnostics, and session replay (Sentry)</h3>
@@ -551,8 +589,8 @@
         </li>
         <li>
           <strong>Consent</strong> - where you choose to send feedback with
-          optional contact details, or where consent is otherwise required by
-          law.
+          optional contact details, where you accept analytics cookies on the
+          website, or where consent is otherwise required by law.
         </li>
         <li>
           <strong>Legal obligations</strong> - where we must process information
@@ -817,5 +855,6 @@
         <a href="./support.html">Support</a>
       </p>
     </footer>
+    <script type="module" src="/src/site-analytics.ts"></script>
   </body>
 </html>
