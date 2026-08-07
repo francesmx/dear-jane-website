@@ -5,10 +5,31 @@ import "./cookie-banner.css";
 const apiKey = import.meta.env.VITE_POSTHOG_PROJECT_TOKEN?.trim();
 const host =
   import.meta.env.VITE_POSTHOG_HOST?.trim() || "https://eu.i.posthog.com";
-const isConfigured = Boolean(apiKey && apiKey !== "phc_your_project_token_here");
+const isConfigured = Boolean(
+  apiKey && apiKey !== "phc_your_project_token_here",
+);
 
 let bannerRoot: HTMLElement | null = null;
 let initialized = false;
+
+function isLocalHost(): boolean {
+  if (typeof window === "undefined") return false;
+  const hostname = window.location.hostname;
+  return (
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname === "[::1]" ||
+    hostname.endsWith(".local")
+  );
+}
+
+/** Never send analytics from Vite dev or local preview hosts. */
+function shouldCaptureAnalytics(): boolean {
+  if (!isConfigured) return false;
+  if (import.meta.env.DEV) return false;
+  if (isLocalHost()) return false;
+  return true;
+}
 
 function mountCookieBanner() {
   if (bannerRoot || document.getElementById("cookie-banner")) return;
@@ -62,7 +83,7 @@ function dismissCookieBanner() {
 }
 
 export function initAnalytics() {
-  if (!isConfigured || typeof window === "undefined") return;
+  if (!shouldCaptureAnalytics() || typeof window === "undefined") return;
 
   if (!initialized) {
     posthog.init(apiKey!, {
@@ -89,7 +110,7 @@ export function captureWebsiteEvent(
   event: string,
   properties: Record<string, string | number | boolean | undefined> = {},
 ) {
-  if (!isConfigured || !initialized) return;
+  if (!shouldCaptureAnalytics() || !initialized) return;
   posthog.capture(event, {
     surface: "website",
     ...properties,

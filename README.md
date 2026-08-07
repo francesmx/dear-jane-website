@@ -36,13 +36,14 @@ The site uses PostHog (EU) with a cookie consent banner:
 - Events are tagged `surface=website` so they stay filterable from app analytics in the same project.
 - Until the visitor accepts or declines, no cookies are set and no events are sent (`cookieless_mode: on_reject`).
 - Accept enables first-party analytics cookies; decline keeps cookieless aggregate measurement.
+- Local development and preview (`npm run dev`, `localhost`, `127.0.0.1`, `*.local`) never initialize PostHog or show the cookie banner.
 
 Set these environment variables locally and in Cloudflare Pages:
 
-| Variable | Required | Notes |
-| --- | --- | --- |
-| `VITE_POSTHOG_PROJECT_TOKEN` | Yes | Project API key from PostHog |
-| `VITE_POSTHOG_HOST` | No | Defaults to `https://eu.i.posthog.com` |
+| Variable                     | Required | Notes                                  |
+| ---------------------------- | -------- | -------------------------------------- |
+| `VITE_POSTHOG_PROJECT_TOKEN` | Yes      | Project API key from PostHog           |
+| `VITE_POSTHOG_HOST`          | No       | Defaults to `https://eu.i.posthog.com` |
 
 ## Host on Cloudflare Pages (free)
 
@@ -59,13 +60,13 @@ The site is a static Vite build and fits the free Cloudflare Pages tier.
 2. Authorise Cloudflare for GitHub and select `francesmx/dear-jane-website`
 3. Use these build settings:
 
-| Setting | Value |
-| --- | --- |
-| Framework preset | Vite (or None) |
-| Build command | `npm run build` |
-| Build output directory | `dist` |
-| Root directory | `/` (default) |
-| Node version | `22` (or set env `NODE_VERSION=22`) |
+| Setting                | Value                               |
+| ---------------------- | ----------------------------------- |
+| Framework preset       | Vite (or None)                      |
+| Build command          | `npm run build`                     |
+| Build output directory | `dist`                              |
+| Root directory         | `/` (default)                       |
+| Node version           | `22` (or set env `NODE_VERSION=22`) |
 
 4. Under **Environment variables**, add `VITE_POSTHOG_PROJECT_TOKEN` (and optionally `VITE_POSTHOG_HOST`) for Production
 5. Save and deploy - you’ll get a `*.pages.dev` URL immediately
